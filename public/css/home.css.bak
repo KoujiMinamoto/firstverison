@@ -1,0 +1,299 @@
+/* *{
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    height: 100%;
+} */
+.clickOn {
+    background-color: #00a2ff;
+    color: white;
+}
+
+.header {
+    /* position: absolute; */
+    width: 80%;
+    /* min-height: 10%; */
+    max-height: 10%;
+    display: grid;
+    grid-template-columns: 50% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5%;
+    margin-left: auto;
+    margin-right: auto;
+}
+/*  header  */
+
+#product_ul,
+#design_ul,
+#gallary_ul{
+    color: black;
+    display: none;
+    z-index:10;
+    position: absolute;
+    top: 20%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 8%;
+    height: 20%;
+    font-family: Candara;
+}
+
+#product_ul li,
+#design_ul li,
+#gallary_ul li{
+    /* display: block; */
+    width: 10%;
+    background-color: white;
+    color: black;
+    width: 100%;
+    height: 20%;
+    text-align: left;
+}
+#product_ul li:hover,
+#design_ul li:hover,
+#gallary_ul li:hover{
+    background-color: gray;
+    color: white;
+}
+.home_content_left{
+    position: relative;
+    width: 45%;
+    left: 1%;
+    float:left;
+}
+.home_content_right{
+    position: relative;
+    width: 49%;
+    left: 5%;
+    float: left;
+}
+.home_content_holder,
+.home_width_holder{
+    position: relative;
+    margin:3%;
+}
+/* #container{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+} */
+.support_div,
+.design_div,
+.product_div,
+.gallary_div,
+.aboutUs_div,
+.contact_div,
+.home_div,
+.cart_div{
+    width: 80%;
+    min-height: 600px;
+    padding-bottom:100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.register_div{
+    width: 80%;
+    min-height: 600px;
+    padding-bottom:100px;
+    margin-left: auto;
+    margin-right: auto;
+    background-size: 200% 100% !important;
+    background: white;
+}
+.companyLogo {
+    display: grid;
+    text-align: center;
+    font-size: small;
+    
+}
+.home,
+.product,
+.design,
+.gallary,
+.support,
+.aboutUs,
+.contact {
+    display: grid;
+    text-align: center;
+    font-size: small;
+    color:black;
+    border-radius: 5px;
+    line-height: 150px;
+    font-size: 18px;
+    font-family: Candara;
+}
+.home>p,
+.product>p,
+.design>p,
+.gallary>p,
+.support>p,
+.aboutUs>p,
+.contact>p {
+    height: 50%;
+}
+.home:hover,
+.product:hover,
+.design:hover,
+.gallary:hover,
+.support:hover,
+.aboutUs:hover,
+.contact:hover{
+    color:white;
+    background-color: rgb(132, 199, 219);
+}
+
+/* .home:hover>ul,
+.product:hover>ul,
+.design:hover>ul,
+.gallary:hover>ul,
+.support:hover>ul,
+.aboutUs:hover>ul,
+.contact:hover>ul{
+    display: block;
+} */
+
+.cart,
+.login,
+.register {
+    display: grid;
+    text-align: center;
+    font-size: small    ;
+    color:black;
+    background-color: rgb(200, 200, 200);
+    border-radius: 5px;
+    line-height: 150px;
+    font-size: 18px;
+    font-family: Candara;
+}
+
+.fixed-bottom {position: fixed;bottom: 0;width:100%;}
+
+/* displayBox */
+.displayBox{
+    width: 98%;
+    height: 400px;
+    /* margin: 100px auto; */
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom:30px;
+}
+.displayBox ul{
+    /* position:absolute; */
+    left: 0;
+    top: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+.displayBoxv1 ul li {
+    float: left;
+    width: 178px;
+    height: 108px;
+    list-style: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+@keyframes move {
+    0% {
+        background-position: 0 0
+    }
+
+    50% {
+        background-position: 100% 0
+    }
+
+    100% {
+        background-position: 0 0
+    }
+}
+
+.displayBox_hd {
+    height: 10px;
+    z-index:1; 
+    overflow: hidden;
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+.displayBox_hd ul{ 
+    text-align:center;
+    padding-top:5px;  
+}
+.displayBox_hd ul li {
+    cursor:pointer;
+    float: left;
+    margin-right: 5px;
+    width: 30px;
+    height: 10px;
+    line-height: 14px;
+    text-align: center;
+    background: black;
+}
+.displayBox_hd ul .on {
+    background: #00a2ff;
+    color: #fff;
+}
+.displayBox_bd{ 
+    position:relative; 
+    z-index:0; 
+}
+.displayBox_bd li img{
+    width:100%; 
+    vertical-align:top;  
+} 
+
+
+/*  footer  */
+
+.footer {
+    width: 100%;
+    min-height: 200px;
+    background-color: rgb(48, 48, 48);
+    margin: 0; 
+    padding: 0;
+}
+.footer_div_phoneNumber {
+    /* position: relative; */
+    height: 100px;
+    width: 500px;
+    /* left: 10%; */
+    /* top: 60px; */
+    display: inline-block;
+    margin-left: 10%;
+    margin-top: 3%;
+}
+.footer_div_phoneNumber  img{
+    float: left;
+}
+.footer_div_phoneNumber p{
+    text-align: center;
+    font-size:40px;
+    color:white;
+    font-weight:bold;
+    line-height: 90px;
+    font-family:Microsoft Yahei;
+    display: inline;
+}
+.footer_div_placeInfo {
+    /* position: relative; */
+    right: 0;
+    float: right;
+    top: -95px;
+    width: 60%;
+    height: 90%;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 40%;
+}
+.footer_div_placeInfo h1 {
+    font-size: 15px;
+    color: white;
+    text-align: left;
+}
+.footer_div_placeInfo p {
+    font-size: 15px;
+    color: white;
+    text-align: left;
+}
