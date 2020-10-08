@@ -1,20 +1,12 @@
-/* *{
-    margin: 0;
-    padding: 0;
-}
-html,body{
-    height: 100%;
-} */
+
 .clickOn {
     background-color: #00a2ff;
     color: white;
 }
 
 .header {
-    /* position: absolute; */
-    width: 1500px;
-    /* min-height: 10%; */
-    max-height: 10%;
+    width: 80%;
+    height: 10%;
     display: grid;
     grid-template-columns: 50% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5%;
     margin-left: auto;
@@ -29,11 +21,11 @@ html,body{
     display: none;
     z-index:10;
     position: absolute;
-    top: 15%;
+    top: 12%;
     list-style: none;
     padding: 0;
     margin: 0;
-    width: 8%;
+    width: 12%;
     height: 20%;
     font-family: Candara;
 }
@@ -41,42 +33,82 @@ html,body{
 #product_ul li,
 #design_ul li,
 #gallary_ul li{
-    /* display: block; */
-    width: 10%;
-    background: linear-gradient(to bottom, white, #b2b2b4);
+    background: linear-gradient(to bottom, white, #e8e8e9);
     color: black;
     width: 100%;
     height: 20%;
     text-align: left;
+    font-size: medium;
+    line-height: 40px;
 }
 #product_ul li:hover,
 #design_ul li:hover,
 #gallary_ul li:hover{
-    background-color: gray;
+    background: gray;
     color: white;
+    line-height: 40px;
 }
+
 .home_content_left{
     position: relative;
     width: 45%;
     left: 1%;
     float:left;
+    min-height: 600px;
 }
 .home_content_right{
     position: relative;
     width: 49%;
     left: 5%;
     float: left;
+    min-height: 30%;
 }
+
+.home_img_place {
+    display: grid;
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+    min-height: 600px;
+}
+
+.home_img_1 {
+    display: grid;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+.home_img_2 {
+    display: grid;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+.home_img_3 {
+    display: grid;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+.home_img_4 {
+    display: grid;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+.home_content_p1 {
+    font-size: x-large;
+    font-family: Candara;
+}
+.home_content_p2 {
+    font-size: xx-large;
+    font-family: Candara;
+}
+
+
+
 .home_content_holder,
 .home_width_holder{
-    position: relative;
+    /* position: relative; */
     margin:3%;
 }
-/* #container{
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-} */
+
 .support_div,
 .design_div,
 .product_div,
@@ -85,14 +117,14 @@ html,body{
 .contact_div,
 .home_div,
 .cart_div{
-    width: 1500px;
-    min-height: 600px;
-    padding-bottom:100px;
+    width: 80%;
+    min-height: 630px;
+    padding-bottom: 50px;
     margin-left: auto;
     margin-right: auto;
 }
 .register_div{
-    width: 1500px;
+    width: 80%;
     min-height: 600px;
     padding-bottom:100px;
     margin-left: auto;
@@ -114,13 +146,15 @@ html,body{
 .aboutUs,
 .contact {
     display: grid;
-    /* text-align: center; */
     font-size: small;
     color:black;
     border-radius: 5px;
-    /* line-height: 150px; */
     font-size: 18px;
     font-family: Candara;
+    /*transition: background-color 0.8s;
+    -moz-transition: background-color 0.8s; /* Firefox 4 */
+    /*-webkit-transition: background-color 0.8s; /* Safari 和 Chrome */
+    /*-o-transition: background-color 0.8s; /* Opera */
 }
 .home>p,
 .product>p,
@@ -130,7 +164,7 @@ html,body{
 .aboutUs>p,
 .contact>p {
     height: 50%;
-    line-height: 150px;
+    line-height: 100px;
     text-align: center;
 }
 .home:hover,
@@ -163,7 +197,7 @@ html,body{
     color:black;
     background-color: rgb(200, 200, 200);
     border-radius: 5px;
-    line-height: 150px;
+    line-height: 100px;
     font-size: 18px;
     font-family: Candara;
 }
@@ -172,9 +206,8 @@ html,body{
 
 /* displayBox */
 .displayBox{
-    width: 2200px;
-    height: 400px;
-    /* margin: 100px auto; */
+    width: 90%;
+    height: 40%;
     overflow: hidden;
     margin-left: auto;
     margin-right: auto;
@@ -283,11 +316,12 @@ html,body{
     /* position: relative; */
     right: 0;
     float: right;
-    top: -95px;
+    /* top: -95px; */
     width: 60%;
     height: 90%;
     display: grid;
     grid-template-columns: 20% 20% 20% 40%;
+    margin-top: 12px;
 }
 .footer_div_placeInfo h1 {
     font-size: 15px;

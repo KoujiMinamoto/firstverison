@@ -1,4 +1,7 @@
 window.onload=function(){
+    
+    var username;
+    var usertype;
     var oDiv  =  document.getElementById('displayBox');
     var oUl = document.getElementsByTagName('ul')[0];
     var Li = oUl.getElementsByTagName('li');
@@ -26,6 +29,15 @@ window.onload=function(){
 
 function initPage() {
 
+    var storage=window.localStorage;
+    var login =storage.login;
+    if (login == "login"){
+        $("#login_id").html('dashboard');
+        $("#register_id").html('logout');
+    }else{
+        $("#login_id").html('login');
+        $("#register_id").html('register');
+    }
     footerPosition();
     $(window).resize(footerPosition);
 
@@ -94,12 +106,36 @@ function clickHeader(headerName) {
             document.getElementById("cart_div_id").style.display = "block";
             break;
         case 8:
-            $(".login").addClass("clickOn");
-            document.getElementById("login_div_id").style.display = "block";
+            var storage=window.localStorage;
+            var login =storage.login;
+            if (login == "login"){
+                document.getElementById("home_div_id").style.display = "block";
+                var usertype = storage.usertype;
+                document.getElementById("homepage_div_id").style.display = "none";
+                if(usertype == '1'){
+                    document.getElementById("dashboard_admin_div_id").style.display = "block";}
+                else{
+                    document.getElementById("dashboard_user_div_id").style.display = "block";
+                }
+            }else
+            { 
+                $(".login").addClass("clickOn");
+                document.getElementById("login_div_id").style.display = "block";}
             break;
         case 9:
+            var storage=window.localStorage;
+            var login =storage.login;
+            if (login == "login"){
+                window.localStorage.setItem('login', "logout");
+                $(".home").addClass("clickOn");
+                document.getElementById("home_div_id").style.display = "block";
+                $("#login_id").html('login');
+                $("#register_id").html('register');
+            }
+            else{
             $(".register").addClass("clickOn");
             document.getElementById("register_div_id").style.display = "block";
+            }
             break;  
         default :
             break;
@@ -130,6 +166,7 @@ function reset() {
     document.getElementById("contact_div_id").style.display = "none";
     document.getElementById("login_div_id").style.display = "none";
     document.getElementById("register_div_id").style.display = "none";
+    document.getElementById("cart_div_id").style.display = "none";
     
 }
 
@@ -144,32 +181,96 @@ function footerPosition(){
         }
 }
 
-//user login
+//user login  need to move to a new file
 function userLogin(){
     if ($('.login_div_un').val() == "" || $('.login_div_pass').val() == "") {
         alert("username or password can't be space");
     } else {
-        let userinfo = {};
-        userinfo.username = document.getElementById("login_username_id").Value;
-        userinfo.password = document.getElementById("login_password_id").Value;
-
+        let logininfo = {"username":'',"password":''};
+        logininfo.username = $('.login_div_un').val();
+        logininfo.password = $('.login_div_pass').val();
         
         $.ajax({
-            type: "GET",
+            type: "POST",
             url: "api/userLogin",
-            // dataType:'json',
-            // data: JSON.stringify(userinfo),
+            dataType:'json',
+            data: 
+                    {
+                        'username':logininfo.username,
+                        'password':logininfo.password
+                    },
             success: function (msg) {
-                if (msg.check == "success") {
-                    //parent.tb_remove();
-                    
-                }
-                if (msg.check == "fail") {
+                if (msg.logincheck == "success") {
+                    // $.ajax({
+                    //     headers: {
+                    //         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    //     },
+                    //     type: "POST",
+                    //     url: "api/userLoginSuccess",
+                    //     dataType:'json',
+                    //     data: 
+                    //             {
+                    //                 'username':msg.username,
+                    //                 'password':msg.type
+                    //             },
+                    // })
+                    // window.localStorage.setItem('a', logininfo.username);
+                    // window.location.href="http://localhost:81/dingo/public/userLogin";
+                    window.localStorage.setItem('username', msg.username);
+                    window.localStorage.setItem('usertype', msg.type);
+                    window.localStorage.setItem('login', "login");
+                    var storage=window.localStorage;
+                    var usertype = storage.usertype;
+                    document.getElementById("homepage_div_id").style.display = "none";
+                    if(usertype == '1'){
+                        document.getElementById("dashboard_admin_div_id").style.display = "block";}
+                    else{
+                        document.getElementById("dashboard_user_div_id").style.display = "block";
+                    }
+
+                }else if (msg.logincheck == false) {
                     alert("username or password is wrong");
+                }else {
+                    alert("unknow error");
                 }
             },
             error: function (XMLHttpRequest, textStatus, thrownError) {
             }
         });
     }
+}
+
+//user register need to move to a new file
+
+function userRegister() {
+
+    let register = {
+        "userName":$(".register_div_form_input").eq(0).val(),
+        "email":$(".register_div_form_input").eq(1).val(),
+        "password":$(".register_div_form_input").eq(2).val(),
+        'phoneNumber':$(".register_div_form_input").eq(3).val(),
+        'address':$(".register_div_form_input").eq(4).val(),
+        'subrub':$(".register_div_form_input").eq(5).val(),
+        'state':$(".register_div_form_input").eq(6).val(),
+        'postcode':$(".register_div_form_input").eq(7).val()
+    };
+    
+    $.ajax({
+        type: "POST",
+        url: "api/userRegister",
+        dataType:'json',
+        data: register,
+        success: function (msg) {
+            if (msg == "success") {
+                alert("register success")
+            }else if (msg == "repeat") {
+                alert("the username is used by others");
+            }else {
+                alert("unknow error");
+            }
+        },
+        error: function (XMLHttpRequest, textStatus, thrownError) {
+        }
+    });
+
 }
