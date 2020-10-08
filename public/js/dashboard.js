@@ -309,7 +309,72 @@ function onreset() {
 //     // } );
 // }
 
+// function initdashboard(){
 
+//     var start = "2020-09-01"
+//     var end = "2020-10-12";
+//     var storage=window.localStorage;
+//     var user =storage.username;
+//     getNumberofOrders();
+//     getNumOfClients();
+//     getAmountByUser(user);
+//     getNumberofOrdersByUser(user);
+//     generateIncomeBarChartByUser(start,end,user)
+//     generateIncomeBarChart(start, end);
+
+//     getAmount();
+//     $('#nowdate').html(getNowFormatDate()); 
+
+//     // $('#table_orders').DataTable( {
+//     //     ajax: {
+//     //         url: 'api/getAllOrder/' + start + '/' + end,
+           
+//     //     },
+//     // } );
+//     window.onstorage = (e) => {
+
+//         console.log(e);
+//         $('#usernametitle').html(e);
+//       };
+
+//     $('#table_orders').DataTable( {
+//         ajax: {
+//             url: 'api/getAllOrder/' + start + '/' + end,
+//             dataSrc: ""
+//         },
+//         columns: [
+//             { data: "order_user" },
+//             { data: "order_price" },
+//             { data: "order_id" },
+//             { data: "order_type" }
+//         ]
+//     } );
+//     $('#table_orders_user').DataTable( {
+//         ajax: {
+//             url: 'api/getAllOrderByUser/' + user,
+//             dataSrc: ""
+//         },
+//         columns: [
+//             { data: "order_user" },
+//             { data: "order_price" },
+//             { data: "order_id" },
+//             { data: "order_type" }
+//         ]
+//     } );
+
+//     $('#table_users').DataTable( {
+//         ajax: {
+//             url: 'api/getAllUser',
+//             dataSrc: ""
+//         },
+//         columns: [
+//             { data: "user_name" },
+//             { data: "user_type" },
+//             { data: "user_email" },
+//             { data: "user_phonenum" }
+//         ]
+//     } );
+// }
 
 jQuery(document).ready(function () {
     

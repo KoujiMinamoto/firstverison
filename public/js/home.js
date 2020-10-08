@@ -113,7 +113,9 @@ function clickHeader(headerName) {
                 var usertype = storage.usertype;
                 document.getElementById("homepage_div_id").style.display = "none";
                 if(usertype == '1'){
-                    document.getElementById("dashboard_admin_div_id").style.display = "block";}
+                    document.getElementById("dashboard_admin_div_id").style.display = "block";
+                    document.getElementById("dashboard_div_id").style.display = "block";
+                }
                 else{
                     document.getElementById("dashboard_user_div_id").style.display = "block";
                 }
@@ -216,6 +218,7 @@ function userLogin(){
                     // })
                     // window.localStorage.setItem('a', logininfo.username);
                     // window.location.href="http://localhost:81/dingo/public/userLogin";
+                    initdashboard();
                     window.localStorage.setItem('username', msg.username);
                     window.localStorage.setItem('usertype', msg.type);
                     window.localStorage.setItem('login', "login");
