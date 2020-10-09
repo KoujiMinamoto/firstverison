@@ -23,6 +23,7 @@
     <script src="https://static.pdflibr.com/SuperSlide/2.1.3/jquery.SuperSlide.2.1.3.js"></script>
     <script type="text/javascript" src="{{URL::asset('/js/vue.js') }}"></script>
     <script type="text/javascript" src="{{URL::asset('/js/vue-router.js') }}"></script>
+    <script type="text/javascript" src="{{URL::asset('/js/dashboard.js') }}"></script>
     </head>
     <body onload="initPage()">
     <!-- <div id="container"> -->
