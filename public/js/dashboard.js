@@ -189,12 +189,14 @@ function generateIncomeBarChartByUser(startDate, endDate,user) {
                         ]
                     };
 
-                    if (Chart.instances[0] != undefined){
-                        Chart.instances[0].data = digramData;
-                        Chart.instances[0].update();
-                    }
-                    else {
                         var chart = document.getElementById('income-month-bar-chart-user').getContext('2d');
+                        if (
+                            barChart !== undefined
+                            &&
+                            barChart !== null
+                        ) {
+                            barChart.destroy();
+                        }
                         var barChart = Chart.Bar(chart, {
                             data: digramData,
                             options: {
@@ -224,7 +226,7 @@ function generateIncomeBarChartByUser(startDate, endDate,user) {
                                 }
                             }
                         });
-                    }
+                    
                 }
             });
         };
@@ -316,30 +318,15 @@ function initDashboard(msg) {
     var start = "2020-09-01"
     var end = "2020-10-12";
     var user =msg.username;
-    let userType = msg.type;
+    var userType = msg.type;
+    if(userType == "1"){
     getNumberofOrders();
     getNumOfClients();
-    getAmountByUser(user);
-    getNumberofOrdersByUser(user);
-    generateIncomeBarChartByUser(start,end,user)
     generateIncomeBarChart(start, end);
-
+    $('#nowdate').html(getNowFormatDate());
     getAmount();
-    $('#nowdate').html(getNowFormatDate()); 
-
-    // $('#table_orders').DataTable( {
-    //     ajax: {
-    //         url: 'api/getAllOrder/' + start + '/' + end,
-           
-    //     },
-    // } );
-    window.onstorage = (e) => {
-
-        console.log(e);
-        $('#usernametitle').html(e);
-      };
-
     $('#table_orders').DataTable( {
+        destroy: true,
         ajax: {
             url: 'api/getAllOrder/' + start + '/' + end,
             dataSrc: ""
@@ -351,7 +338,29 @@ function initDashboard(msg) {
             { data: "order_type" }
         ]
     } );
+    $('#table_users').DataTable( {
+        destroy: true,
+            ajax: {
+                url: 'api/getAllUser',
+                dataSrc: ""
+            },
+            columns: [
+                { data: "user_name" },
+                { data: "user_type" },
+                { data: "user_email" },
+                { data: "user_phonenum" }
+            ]
+    } );
+    }
+    else{
+    getAmountByUser(user);
+    getNumberofOrdersByUser(user);
+    generateIncomeBarChartByUser(start,end,user)
+
+    $('#nowdate').html(getNowFormatDate()); 
+
     $('#table_orders_user').DataTable( {
+        destroy: true,
         ajax: {
             url: 'api/getAllOrderByUser/' + user,
             dataSrc: ""
@@ -364,17 +373,10 @@ function initDashboard(msg) {
         ]
     } );
 
-    $('#table_users').DataTable( {
-        ajax: {
-            url: 'api/getAllUser',
-            dataSrc: ""
-        },
-        columns: [
-            { data: "user_name" },
-            { data: "user_type" },
-            { data: "user_email" },
-            { data: "user_phonenum" }
-        ]
-    } );
+    }
+    
+    
+
+    
     
 };

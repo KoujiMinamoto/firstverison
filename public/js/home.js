@@ -28,9 +28,10 @@ window.onload=function(){
 }
 
 function initPage() {
-
+    window.localStorage.setItem('login', "logout");
     var storage=window.localStorage;
     var login =storage.login;
+    console.log(login);
     if (login == "login"){
         $("#login_id").html('dashboard');
         $("#register_id").html('logout');
@@ -109,11 +110,12 @@ function clickHeader(headerName) {
             var storage=window.localStorage;
             var login =storage.login;
             if (login == "login"){
-                document.getElementById("home_div_id").style.display = "block";
                 var usertype = storage.usertype;
+                var username = storage.username;
                 document.getElementById("homepage_div_id").style.display = "none";
                 if(usertype == '1'){
-                    document.getElementById("dashboard_admin_div_id").style.display = "block";}
+                    document.getElementById("dashboard_admin_div_id").style.display = "block";
+                    }
                 else{
                     document.getElementById("dashboard_user_div_id").style.display = "block";
                 }
@@ -216,14 +218,15 @@ function userLogin(){
                     // })
                     // window.localStorage.setItem('a', logininfo.username);
                     // window.location.href="http://localhost:81/dingo/public/userLogin";
-                    // window.localStorage.setItem('username', msg.username);
-                    // window.localStorage.setItem('usertype', msg.type);
-                    // window.localStorage.setItem('login', "login");
-                    // var storage=window.localStorage;
-                    // var usertype = storage.usertype;
+                    window.localStorage.setItem('username', msg.username);
+                    window.localStorage.setItem('usertype', msg.type);
+                    window.localStorage.setItem('login', "login");
+                    var storage=window.localStorage;
+                    var usertype = storage.usertype;
+                    let msgd = msg;
                     document.getElementById("homepage_div_id").style.display = "none";
-
-                    if(msg.usertype == '1'){
+                    console.log(msgd);
+                    if(usertype == "1"){
                         initDashboard(msg);
                         document.getElementById("dashboard_admin_div_id").style.display = "block";}
                     else{

@@ -31,7 +31,7 @@
             <!-- header -->
             <div class="header" id="header_id">
                 <div class="companyLogo" id="companyLogo_id">
-                    <img src="{{URL::asset('/image/4.png') }} " width=30% height=100px>
+                    <img src="{{URL::asset('/image/4.png') }} " width=50% height=100%>
                 </div>
                 <div class="home" id="home_id" onclick="clickHeader(0)">
                     <p>home</p>
@@ -47,7 +47,7 @@
                 </div>
                 <div class="design" id="design_id" onclick="clickHeader(2)">
                     <p>design</p>
-                    <ul id="design_ul">
+                    <!-- <ul id="design_ul">
                         <li>&nbsp;&nbsp;Logo Design</li>
                         <li>&nbsp;&nbsp;Brochure Design</li>
                         <li>&nbsp;&nbsp;Flyer Design</li>
@@ -56,15 +56,15 @@
                         <li>&nbsp;&nbsp;Company Catalogue Design</li>
                         <li>&nbsp;&nbsp;Presentation Folder</li>
                         <li>&nbsp;&nbsp;more</li>
-                    </ul>
+                    </ul> -->
                 </div>
                 <div class="gallary" id="gallary_id" onclick="clickHeader(3)">  
                     <p>gallary</p>
-                    <ul id="gallary_ul">
+                    <!-- <ul id="gallary_ul">
                         <li>&nbsp;&nbsp;gallary1</li>
                         <li>&nbsp;&nbsp;gallary2</li>
                         <li>&nbsp;&nbsp;gallary3</li>
-                    </ul>
+                    </ul> -->
                 </div>
                 <div class="support" id="support_id" onclick="clickHeader(4)"><p>support</p></div>
                 <div class="aboutUs" id="aboutUs_id" onclick="clickHeader(5)"><p>about us</p></div>
@@ -89,6 +89,101 @@
 
             <!-- home -->
             <div class = "home_div" id="home_div_id" style="display:block">
+
+                <div class="home_icon_holder">
+                    <div class="booklets_holder home_menu">
+                    <a href="#" title="Online Booklet Printing Services">
+                       <div class="home_panel_img booklets_img"></div>
+                       Booklets
+                    </a>
+                    </div>
+       
+                    <div class="brochures_holder home_menu">
+                    <a href="#" title="Online Brochure Printing Services">
+                    <div class="home_panel_img brochures_img"></div>
+                       Brochures
+                    </a>
+                    </div>
+       
+                    <div class="business_cards_holder home_menu">
+                    <a href="#" title="Online Business Card Printing Services">
+                    <div class="home_panel_img business_cards_img"></div>
+                       Business Cards
+                    </a>
+                    </div>
+       
+                    <div class="notepads_holder home_menu">
+                    <a href="#" title="Online Notepad Printing Services">
+                    <div class="home_panel_img notepads_img"></div>
+                       Deskpads / Notepads
+                    </a>
+                    </div>
+       
+                    <div class="docketbooks_holder home_menu">
+                    <a href="#" title="Online Docket Book Printing Services">
+                    <div class="home_panel_img docketbooks_img"></div>
+                       Docket Books
+                    </a>
+                    </div>
+       
+                    <div class="envelopes_holder home_menu">
+                    <a href="#" title="Online Envelope Printing Services">
+                    <div class="home_panel_img envelopes_img"></div>
+                       Envelopes
+                    </a>
+                    </div>
+       
+                    <div class="flyers_holder home_menu">
+                    <a href="#" title="Online Flyer Printing Services">
+                    <div class="home_panel_img flyers_img"></div>
+                       Flyers
+                    </a>
+                    </div>
+                    <div class="magnets_holder home_menu">
+                    <a href="#" title="Buy Fridge Magnets Online">
+                    <div class="home_panel_img magnets_img"></div>
+                       Fridge Magnets
+                    </a>
+                    </div>
+                    <div class="letterheads_holder home_menu">
+                    <a href="#" title="Online Letterhead Printing Services">
+                    <div class="home_panel_img letterheads_img"></div>
+                       Letterheads
+                    </a>
+                    </div>
+                    <div class="postcards_holder home_menu">
+                    <a href="#" title="Online Postcard Printing Services">
+                    <div class="home_panel_img postcards_img"></div>
+                       Postcards
+                    </a>
+                    </div>
+                    <div class="posters_holder home_menu">
+                    <a href="#" title="Online Poster Printing Services">
+                    <div class="home_panel_img posters_img"></div>
+                       Posters
+                    </a>
+                    </div>
+                    <div class="presentation_folders_holder home_menu">
+                    <a href="#" title="Online Presentation Folder">
+                    <div class="home_panel_img presentation_folders_img"></div>
+                       Presentation Folders
+                    </a>
+                    </div>
+                                 <div class="with_comps_holder home_menu">
+                    <a href="#">
+                    <div class="home_panel_img with_comps_img"></div>
+                       With Compliments
+                    </a>
+                    </div>
+                    <div class="web_design_holder home_menu">
+                    <a href="#">
+                    <div class="home_panel_img web_design_img"></div>
+                       Website Design
+                    </a>
+                    </div>
+       
+                    <div style="clear: both;"></div>
+                </div>
                 <div class="home_content_left">
                     <div class="home_img_place">
                         <div class="home_img_1">
@@ -112,7 +207,7 @@
                     <p >Design your own graphics and send the file to us ordering process. Our printing services are the </p>
                     <p >21st century way of producing customised business stationary at reduced cost.</p>
                 </div>
-                <div class="clear"></div>
+                <div style="clear: both;"></div>
             </div>
 
             <!-- product -->
@@ -701,37 +796,58 @@
                 </div>
             </div>
             
-             <!-- footer -->
+            <!-- footer -->
             <div class = "footer" id="footer_id">
-                <div class = "footer_div_phoneNumber">
-                    <img src="{{URL::asset('/image/tel.png') }}" width=80px height=80px>
-                    <p>130 000 0000</p>
-                </div>
-                <div class = "footer_div_placeInfo">
-                    <div>
-                        <h1>Printion Servers</h1>
-                        <p>Business Card Printing</p>
-                        <p>Envelope Printing</p>
-                        <p>Docker Book Printing</p>
-                        <p>Brochuer Printing</p>
+                
+                <div class="footer_width_holder">
+                    <div class="footer_col1">
+                        <div class="footer_phone">
+                        <img src="image/phone.png" alt="Call 1300 327 471" class="footer_phone_number">
+                        </div>
                     </div>
-                    <div>
-                        <p>Post Printing</p>
-                        <p>Postcard Printing</p>
-                        <p>Posters Printing</p>
-                        <p>Express Printing</p>
-                        <p>Website Printing</p>
+                    <div class="footer_col2">
+                        <div class="footer_menu1">
+                        <div class="footer_heading">Printing Services</div>
+                        <ul>
+                          <li><a >Business Card Printing</a></li>
+                          <li><a >Booklet Printing</a></li>
+                          <li><a >Brochure Printing</a></li>
+                          <li><a >Compliment Slip Printing</a></li>
+                          <li><a >Docket Book Printing</a></li>
+                          <li><a >Envelope Printing</a></li>
+                          <li><a >Flyer Printing</a></li>
+                        </ul>
+                        </div>
+                        <div class="footer_menu2">
+                        <ul>
+                          <li><a >Letterhead Printing</a></li>
+                          <li><a >Notepad/Desk Pad Printing</a></li>
+                          <li><a >Postcard Printing</a></li>
+                          <li><a >Posters Printing</a></li>
+                          <li><a >Presentation Folder Printing</a></li>
+                          <li><a >Express Printing</a></li>
+                          <li><a >Custom Quotes</a></li>
+                          <li><a >Website Design</a></li>
+                        </ul>
+                        </div>
+                        <div class="social_media_holder">
+                        <a class="footer_facebook" href="" target="_blank" rel="nofollow"></a>
+                        <a class="footer_twitter" href="" target="_blank" rel="nofollow"></a>
+                        </div>
+                        <div style="clear: both;"></div>
+                        <div class="credentials"> 
+                        Copyright © YellowStar 2020-2023. All Rights Reserved.&nbsp;&nbsp; 
+                        <a href="" target="_blank">Web Design</a> by <strong>XXX</strong>
+                        </div>
                     </div>
-                    <div>
-                        <h1>Company Info</h1>
-                        <p>About Us</p>
-                        <p>Contact</p>
-                        <p>Privity Policy</p>
-                        <p>Test</p>
-                    </div>
-                </div>
+                <div style="clear: both;"></div>
             </div>
+            </div>
+    
+    
+    
     </div>
+
 
     <div class="dashboard_admin" id="dashboard_admin_div_id" style="display:none">
         <div class="az-header">
