@@ -213,14 +213,14 @@
 .home_content_left{
     position: relative;
     width: 45%;
-    left: 1%;
+    left: 6%;
     float:left;
     min-height: 600px;
 }
 .home_content_right{
     position: relative;
-    width: 49%;
-    left: 5%;
+    width: 42%;
+    left: 7%;
     float: left;
     min-height: 30%;
 }
