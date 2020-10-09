@@ -218,7 +218,6 @@ function userLogin(){
                     // })
                     // window.localStorage.setItem('a', logininfo.username);
                     // window.location.href="http://localhost:81/dingo/public/userLogin";
-                    initdashboard();
                     window.localStorage.setItem('username', msg.username);
                     window.localStorage.setItem('usertype', msg.type);
                     window.localStorage.setItem('login', "login");
